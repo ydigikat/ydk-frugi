@@ -28,6 +28,8 @@
 #include "ui.h"
 #endif
 
+
+
 /* The synthesiser data instance and 'glue' functions*/
 static struct synth s;
 static void process_midi_msg(void *ctx, struct midi_msg *msg);
@@ -162,5 +164,13 @@ static void heartbeat_routine(void) {
       elapsed_us = 0;
     }
   }
+}
+#endif
+
+#ifdef STACK_CHECK_ENABLED
+unsigned long __stack_chk_guard = 0xCAFEFEED;
+
+void __stack_chk_fail(void) { 
+  ERROR_HALT("Stack check fail.");
 }
 #endif

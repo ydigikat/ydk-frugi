@@ -41,7 +41,7 @@ set(CMAKE_SIZE         ${TOOLS_DIR}starm-size)
 set(STARM_GCC_TOOLCHAIN "${STM32CUBECLT_ROOT}/GNU-tools-for-STM32")
 set(STARM_MULTILIB_CONFIG "${STM32CUBECLT_ROOT}/st-arm-clang/multilib.gnu_tools_for_stm32.yaml")
 
-set(CMAKE_C_FLAGS   "-fdata-sections -ffunction-sections -fstack-usage --std=c23 --gcc-toolchain=${STARM_GCC_TOOLCHAIN} --multi-lib-config=${STARM_MULTILIB_CONFIG}")
+set(CMAKE_C_FLAGS   "-fdata-sections -ffunction-sections -fstack-usage -fstack-protector-all --std=c23 --gcc-toolchain=${STARM_GCC_TOOLCHAIN} --multi-lib-config=${STARM_MULTILIB_CONFIG}")
 set(CMAKE_ASM_FLAGS "-x assembler-with-cpp")
 set(CMAKE_C_FLAGS_DEBUG   "-Og -g3")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -ffast-math")

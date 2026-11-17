@@ -99,6 +99,9 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
     # Heartbeat strobe on/off
     STROBE_ENABLED
 
+    # Stack canary 
+    STACK_CHECK_ENABLED
+
     # Independent watchdog - release only (would reset at debug breakpoints)
     $<$<CONFIG:RELEASE>: WATCHDOG_ENABLED>
 
